@@ -1,29 +1,57 @@
-"# PH-Assignment-06"
+1) Difference between var, let, and const
 
-var, let, const
-var : used in function, can be re-declared and updated.
+1 var: Function-scoped, can be re-declared and reassigned, hoisted with undefined. Mostly used in old JavaScript.
+2 let`: Block-scoped, can be reassigned but not re-declared in the same scope. Safer than var.
+3 const: Block-scoped, cannot be reassigned or re-declared. Best for constants and fixed references.
 
-let : used in block, can be updated but not re-declared in the same scope.
 
-const : used in block, cannot be updated or re-declared 2. map(), forEach(), filter()
+2) Difference between map(), forEach(), and filter()**
 
-map() : returns a new array after applying a function to each element.
+1 map(): Creates a new array by transforming each element.
+2 forEach(): Loops through each element, executes a function, but doesn’t return a new array.
+3 filter(): Returns a new array containing only elements that satisfy a condition.
 
-forEach() : executes a function on each element, does not return anything.
+Example:
 
-filter() : returns a new array with elements that pass a condition.
+js
+const nums = [1,2,3,4];
+nums.map(n => n*2);     // [2,4,6,8]
+nums.forEach(n => console.log(n)); // prints 1,2,3,4
+nums.filter(n => n%2===0); // [2,4]
 
-Arrow functions
-syntax: (args) => expression.
 
-Do not have their own this, use the surrounding this.
+3) Arrow Functions in ES6
+Arrow functions provide a shorter syntax for writing functions.
 
-Can be used for concise, inline functions.
+1 Don’t have their own this, they use the parent’s this.
+2 Cannot be used as constructors.
+3 Cleaner and more concise.
 
-Destructuring assignment
-Extract values from arrays/objects into variables:
+js
+const add = (a, b) => a + b;
 
-Template literals
-Use backticks ` for strings.
 
-Can embed variables: Hello ${name}
+4) Destructuring Assignment in ES6
+Allows unpacking values from arrays or objects directly into variables.
+
+1 Makes code shorter and easier to read.
+
+js
+const [x, y] = [10, 20];  
+const {name, age} = {name: "Alice", age: 25};  
+
+
+
+5) Template Literals in ES6
+Template literals use backticks (  ) and support variable interpolation with ${}.
+
+1 Easier than string concatenation.
+2 Can span multiple lines.
+
+js
+const name = "John";  
+const age = 30;  
+console.log(My name is ${name} and I am ${age} years old.);  
+
+
+
